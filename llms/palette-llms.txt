@@ -1,0 +1,25 @@
+# Palette
+
+> Palette (Palette HQ) is a sales commission and incentive compensation management platform that automates the calculation, tracking, and payout of sales commissions in real time for revenue operations and finance teams. Backed by Bain Capital Ventures. SOC 2 Type II compliant.
+
+Palette has no publicly documented developer API. The product connects to source systems (CRM, billing, data warehouses) through one-click managed integrations rather than a public REST API. A private "API" component is monitored on the status page but no public reference is published.
+
+## Product
+- Website: https://palettehq.com/
+- Pricing: https://palettehq.com/plans
+- Integrations: https://palettehq.com/integrations
+- Blog: https://palettehq.com/blog
+- Login: https://app.palettehq.com/#/login
+
+## Docs & Support
+- Documentation: https://doc.palettehq.com/
+- Support: https://palettehq.com/support
+- Status: https://palette.statuspage.io/
+
+## Security & Compliance
+- Security: https://palettehq.com/security (SOC 2 Type II, GDPR)
+- Security contact: security@palettehq.com
+
+## Legal
+- Terms: https://palettehq.com/terms-conditions
+- Legal notice: https://palettehq.com/legal-notice

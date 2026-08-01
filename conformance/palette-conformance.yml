@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://palettehq.com/security
+standards:
+- id: soc2-type2
+  conforms: true
+  evidence: "Palette security page states 'Palette is SOC-2 Type 2 compliant' with report available upon request"
+- id: gdpr
+  conforms: true
+  evidence: "Company states GDPR compliance; dedicated data protection contact dpo@palettehq.com"
+- id: pen-testing
+  conforms: true
+  evidence: "Annual third-party penetration testing per security page"
+- id: encryption-in-transit
+  conforms: true
+  evidence: "TLS/SSL in transit and encryption at rest per security page; live TLSv1.3 + HSTS confirmed"
+- id: iso27001
+  conforms: false
+- id: hipaa
+  conforms: false
+- id: pci-dss
+  conforms: false
+- id: fedramp
+  conforms: false
+compliance_program:
+  published: true
+  url: https://palettehq.com/security
+  certifications:
+  - SOC 2 Type II
+  - GDPR

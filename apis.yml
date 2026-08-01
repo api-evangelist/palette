@@ -1,8 +1,25 @@
 aid: palette
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/palette.png
 name: Palette
-description: 'Palette is a company surfaced as a portfolio company of bain-capital-ventures and added
-  to the API Evangelist network as a stub for enrichment. Sector: ai-apps. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Palette (Palette HQ) is a sales commission and incentive compensation management platform
+  that automates the calculation, tracking, and payout of sales commissions in real time. It lets revenue
+  operations and finance teams design complex commission plans, run scenario analysis and forecasting,
+  give reps live visibility into earnings through performance dashboards, and keep audit trails for
+  compliance. Palette connects to CRMs (Salesforce, HubSpot, Pipedrive, Close, Outreach, Bullhorn,
+  Sellsy), billing systems (Stripe, Chargebee, QuickBooks, Xero, NetSuite, Pennylane), and data
+  warehouses (Snowflake, BigQuery, Redshift) via one-click integrations rather than a public developer
+  API. The company is SOC 2 Type II compliant and backed by Bain Capital Ventures.'
 url: https://raw.githubusercontent.com/api-evangelist/palette/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,10 +29,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Ai Apps
+- Sales Compensation
+- Commission Management
+- Revenue Operations
+- Sales
+- FinOps
+- SaaS
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -25,3 +48,34 @@ maintainers:
 common:
 - type: Website
   url: https://palettehq.com/
+- type: Documentation
+  url: https://doc.palettehq.com/
+- type: Pricing
+  url: https://palettehq.com/plans
+- type: Blog
+  url: https://palettehq.com/blog
+- type: Login
+  url: https://app.palettehq.com/#/login
+- type: Support
+  url: https://palettehq.com/support
+- type: TermsOfService
+  url: https://palettehq.com/terms-conditions
+- type: StatusPage
+  url: https://palette.statuspage.io/
+- type: Security
+  url: https://palettehq.com/security
+- type: VulnerabilityDisclosure
+  url: security/palette-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/palette-domain-security.yml
+- type: Conformance
+  url: conformance/palette-conformance.yml
+- type: Compliance
+  url: https://palettehq.com/security
+- type: LLMsTxt
+  url: llms/palette-llms.txt
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 4
+  pass: local-v1
