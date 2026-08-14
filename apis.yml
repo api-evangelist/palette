@@ -29,7 +29,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-13'
 tags:
 - Company
 - Ai Apps
@@ -74,8 +74,32 @@ common:
   url: https://palettehq.com/security
 - type: LLMsTxt
   url: llms/palette-llms.txt
+- type: GitHubOrganization
+  url: https://github.com/PaletteHQ
+- type: Lifecycle
+  url: lifecycle/palette-lifecycle.yml
+- type: Plans
+  url: plans/palette-plans-pricing.yml
 x-enrichment:
-  date: '2026-07-20'
-  status: enriched
-  artifacts_added: 4
+  date: '2026-08-13'
+  status: minimal
+  artifacts_added: 5
   pass: local-v1
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: >-
+    Palette's only documentation host, doc.palettehq.com, historically 302'd to
+    https://app.palettehq.com/#/login — the reference required an active tenant — and it
+    now returns CloudFront 502 "Failed to contact the origin" on every path, while the API
+    host api.palettehq.com is a dangling CNAME to an NXDOMAIN Elastic Beanstalk
+    environment, so the API that Palette monitors as a component on its own status page
+    has no reachable reference at all.
+  evidence:
+  - url: https://doc.palettehq.com/
+    status: 502
+  - url: https://palettehq.com/openapi.json
+    status: 404
+  - url: https://palettehq.com/.well-known/agent-card.json
+    status: 404
+  checked: '2026-08-13'
