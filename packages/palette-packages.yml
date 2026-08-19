@@ -1,0 +1,40 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  npm registry search, PyPI, GitHub org github.com/PaletteHQ, and the palettehq.com
+  product / integrations / support pages
+note: >-
+  Palette publishes no first-party client library on any public registry. npm registry
+  search for "palettehq" returns zero results; PyPI /pypi/palettehq/json returns 404; the
+  GitHub organization github.com/PaletteHQ holds exactly one public repository, a fork of
+  the third-party "react-ga" Google Analytics module last pushed 2022-05-23, which is not
+  a Palette SDK. Every npm package matching "palette" is a colour-palette library from an
+  unrelated author and is explicitly NOT attributed here. Palette's own integrations page
+  describes "1-click secured connection" managed connectors rather than a developer SDK.
+  NO SDKs pointer is emitted in apis.yml — this file records a verified absence.
+packages: []
+package_count: 0
+registries_searched:
+- registry: npm
+  query: palettehq
+  url: https://registry.npmjs.org/-/v1/search?text=palettehq
+  results: 0
+- registry: pypi
+  query: palettehq
+  url: https://pypi.org/pypi/palettehq/json
+  status: 404
+  results: 0
+source_repositories:
+- org: https://github.com/PaletteHQ
+  type: Organization
+  public_repos: 1
+  repos:
+  - name: react-ga
+    description: React Google Analytics Module
+    first_party: false
+    fork_of_third_party: true
+    pushed: '2022-05-23'
+    version: null
+    note: >-
+      Fork of the third-party react-ga library, not a Palette client. Not published to any
+      registry under a Palette namespace, so there is no version or release date to read.

@@ -1,0 +1,17 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  https://www.palettehq.com/plans, https://www.palettehq.com/support,
+  https://www.palettehq.com/integrations, https://doc.palettehq.com/ (502)
+note: >-
+  No rate limits are published. Palette has no public developer reference to carry them —
+  the documentation host answers 502 and historically required an application login — and
+  no tier on the plans page names a call allowance, quota or throttle. No response-header
+  contract (X-RateLimit-*, RateLimit-*, Retry-After) could be observed either, because the
+  API host api.palettehq.com does not resolve, so no live response exists to inspect. This
+  is a verified absence, not an unchecked field; NO RateLimits pointer is emitted in
+  apis.yml.
+limit_count: 0
+limits: []
+headers: []
+exhaustion_status: null

@@ -1,0 +1,86 @@
+generated: '2026-08-13'
+method: probed
+source: live GET of /.well-known/* on every host named in apis.yml plus every host found
+  in certificate transparency for palettehq.com
+note: >-
+  Every /.well-known/ path probed returned a miss. The marketing host (Webflow) answers
+  404 on all of them. The documentation host answers 502 from CloudFront ("Failed to
+  contact the origin") on every path, and the application and API hosts do not resolve at
+  all — their CNAME targets have no address records. NO WellKnown or SecurityTxt pointer
+  is emitted in apis.yml because nothing here is a served document; this file records a
+  verified absence, not a presence.
+hosts:
+- host: https://palettehq.com
+  reachable: true
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /security.txt
+    status: 404
+- host: https://www.palettehq.com
+  reachable: true
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://doc.palettehq.com
+  reachable: false
+  reachability_note: CloudFront returns 502 "Failed to contact the origin" for every path
+  documents:
+  - path: /.well-known/security.txt
+    status: 502
+  - path: /.well-known/openid-configuration
+    status: 502
+  - path: /.well-known/oauth-authorization-server
+    status: 502
+  - path: /.well-known/api-catalog
+    status: 502
+  - path: /.well-known/ai-plugin.json
+    status: 502
+  - path: /.well-known/agent-card.json
+    status: 502
+  - path: /.well-known/agent.json
+    status: 502
+- host: https://app.palettehq.com
+  reachable: false
+  reachability_note: >-
+    DNS CNAME to d15a3myzfri5d8.cloudfront.net, which returns NOERROR with no A or AAAA
+    record on 8.8.8.8, 1.1.1.1 and 9.9.9.9 — the distribution does not resolve, so no
+    request can be made
+  documents: []
+- host: https://api.palettehq.com
+  reachable: false
+  reachability_note: >-
+    DNS CNAME to production-api.eba-axpzms7n.eu-west-3.elasticbeanstalk.com, which is
+    NXDOMAIN — the Elastic Beanstalk environment no longer exists
+  documents: []
+summary:
+  hosts_probed: 5
+  paths_probed: 30
+  documents_found: 0
+  security_txt: false
+  agent_card: false
+  api_catalog: false

@@ -1,0 +1,76 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.palettehq.com/plans
+note: >-
+  Palette publishes three named tiers but no price on any of them — every tier routes to
+  a "Book a demo" / contact-sales motion. The page states annual billing saves 20% and
+  that implementation fees are flexible. No API access, quota, call allowance or rate
+  limit is attached to any tier; the API is not a sold line item.
+currency: null
+billing_periods:
+- monthly
+- annual
+annual_discount: 20% versus monthly
+plan_count: 3
+plans:
+- name: Starter
+  price: null
+  price_model: contact-sales
+  currency: null
+  period: null
+  quota: null
+  overage: null
+  seats: Unlimited admin seats
+  includes:
+  - Palette Commissions
+  - Palette Challenges
+  - Personalized performance dashboards
+  - Real-time commission calculation
+  - Unlimited admin seats
+  - Quota management
+  - Roll up and manager plans
+  - Commission plans scenario builder
+  - Payroll report
+  - 20+ native data integration connectors (CRM, ERPs, Billing, Databases)
+  - Statement approval workflows
+  - Advanced payout schedule
+  - Data overriding and history log
+  - Team management
+- name: Scale
+  price: null
+  price_model: contact-sales
+  currency: null
+  period: null
+  quota: null
+  overage: null
+  seats: Up to 100 seats
+  includes:
+  - Everything in Starter
+  - Advanced Role Based Access Control
+  - Data transformation tool
+  - Release commissions on invoice payments
+  - Multi-currency
+  - Clawbacks
+  - Ramps and draws
+  - Commission data history backup
+  - Access to live chat support
+- name: Enterprise
+  price: null
+  price_model: custom
+  currency: null
+  period: null
+  quota: null
+  overage: null
+  seats: null
+  includes:
+  - Everything in Scale
+  - Single sign-on (SSO)
+  - Dedicated Customer Success contact
+  - Dedicated Slack channel for real-time support
+  - Custom data integrations
+  - Employee-specific agreements (coming soon)
+api_access:
+  sold_as_line_item: false
+  note: >-
+    No tier mentions API access, API calls, an API add-on or developer seats. "Custom data
+    integrations" on Enterprise is delivered by Palette, not self-served through an API.

@@ -1,0 +1,100 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  https://palette.statuspage.io/api/v2/summary.json, https://www.palettehq.com/support,
+  https://www.palettehq.com/security, plus live DNS/HTTP probes of every palettehq.com host
+versioning:
+  scheme: null
+  current: null
+  docs: null
+  note: >-
+    No public versioning policy. Palette publishes no developer reference, so there is no
+    documented API version, no version header and no version-in-path convention to record.
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: No deprecation or sunset policy is published anywhere on palettehq.com.
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    No SLA or uptime commitment is published. The plans page names a "Dedicated Customer
+    Success contact" and a "Dedicated Slack channel" on Enterprise but states no uptime
+    target.
+status_page:
+  url: https://palette.statuspage.io/
+  platform: Atlassian Statuspage
+  page_id: 1brhqr2glqm0
+  machine_readable: https://palette.statuspage.io/api/v2/summary.json
+  status_at_probe: All Systems Operational
+  page_metadata_updated_at: '2022-11-13T00:00:32.223Z'
+  open_incidents: 0
+  components:
+  - name: Corporate Site (www.palettehq.com)
+    status: operational
+    description: Informational website with pricing and product information
+  - name: Web Application
+    status: operational
+  - name: API
+    status: operational
+    note: >-
+      Palette monitors a component it calls "API" on its own status page, which is the
+      clearest public evidence that an API exists — but no public reference, spec or
+      base URL for it is published anywhere.
+  - name: Computation Engine
+    status: operational
+    description: Component in charge of calculating commissions
+  - name: Data Fetching Service
+    status: operational
+    description: Component in charge of fetching data from CRMs, Billing & HR Systems
+  - name: Reconciliation Engine
+    status: operational
+    description: >-
+      Component in charge of merging 2 datasets together (ex: CRM closed won opportunities
+      with Billing System paid invoices)
+availability:
+  checked: '2026-08-13'
+  note: >-
+    Recorded as observed, not as a judgement about the company. The marketing site and
+    Google Workspace MX records are live and Y Combinator still lists Palette (S21, Paris)
+    as active with 14 people, but every host that serves the product plane was unreachable
+    from this probe. This is a material discovery finding: palettehq.com's own homepage
+    still links to a login host that does not resolve.
+  hosts:
+  - host: palettehq.com
+    result: 200
+    note: Webflow-hosted marketing site, live
+  - host: blog.palettehq.com
+    result: 200
+    note: Webflow-hosted blog, live
+  - host: doc.palettehq.com
+    result: 502
+    note: >-
+      CloudFront "Failed to contact the origin" on every path. The Internet Archive shows
+      this host historically answered 302 to
+      https://app.palettehq.com/#/login?next=https%3A%2F%2Fdoc.palettehq.com%2F — the
+      documentation was customer-only, behind the application login, before the origin
+      went away.
+  - host: app.palettehq.com
+    result: dns-no-address
+    note: >-
+      CNAME to d15a3myzfri5d8.cloudfront.net; that distribution returns NOERROR with no
+      A/AAAA record on 8.8.8.8, 1.1.1.1 and 9.9.9.9. Still linked as "Login" from the live
+      homepage.
+  - host: api.palettehq.com
+    result: dns-nxdomain
+    note: >-
+      CNAME to production-api.eba-axpzms7n.eu-west-3.elasticbeanstalk.com, which is
+      NXDOMAIN. The Elastic Beanstalk environment behind the API host no longer exists.
+  - host: integrations.palettehq.com
+    result: tls-handshake-failure
+    note: >-
+      nginx 301s HTTP to HTTPS, and HTTPS answers a TLSv1 internal-error alert for that
+      SNI — no usable certificate is served.
+  - host: trail.palettehq.com
+    result: 200
+    note: >-
+      Not a Palette surface — serves the lemlist custom-domain confirmation page for
+      outbound email tracking.
+  subdomains_enumerated_via: https://crt.sh/json?q=palettehq.com
+deprecated_operations: []
